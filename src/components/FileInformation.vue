@@ -28,12 +28,8 @@
     },
     methods: {
       async submitForm() {
-        const formData = new FormData();
-        formData.append('fileName', this.textInput);
-        formData.append('isCloud', this.isCloud);
-
         try {
-          const response = await getRequest("/api/match-filename", formData);
+          const response = await getRequest("/api/match-filename", {fileName: this.textInput, isCloud: this.isCloud});
 
           // TODO_BUSU: show a notification for succes/fail
           console.log('Server Response:', response.data);

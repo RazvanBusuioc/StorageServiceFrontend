@@ -18,12 +18,12 @@ export const postRequest = async (url, data, config = { headers: { 'Content-Type
     return response.data;
 };
 
-export const deleteRequest = async (url, data, config = {}) => {
-    const response = await instance.delete(url, data, config);
+export const deleteRequest = async (url, parameters, config = {}) => {
+    const response = await instance.delete(url, {params: parameters}, config);
     return response.data;
 };
 
-export const getRequest = async (url, data, config = {}) => {
-    const response = await instance.get(url, data, config);
+export const getRequest = async (url, parameters) => {
+    const response = await instance.get(url, {params: parameters});
     return response.data;
 };

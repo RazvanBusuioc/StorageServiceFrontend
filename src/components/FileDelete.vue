@@ -30,13 +30,8 @@
         async submitForm() {
             console.log('Text Input:', this.textInput);
             console.log('Is Cloud:', this.isCloud);
-
-            const formData = new FormData();
-            formData.append('fileName', this.textInput);
-            formData.append('isCloud', this.isCloud);
-
             try {
-                const response = await deleteRequest("/api/delete", formData);
+                const response = await deleteRequest("/api/deleteFile", {fileName: this.textInput, isCloud: this.isCloud});
                 // TODO_BUSU: show a notification for succes/fail
                 console.log('Server Response:', response.data);
             } catch (error) {
