@@ -1,9 +1,10 @@
 // axiosUtils.js
 import axios from 'axios';
 
+const REST_API_PORT = 8085
 const instance = axios.create({
   // You can set global configurations here, such as baseURL, headers, etc.
-  baseURL: 'http://localhost:3000', // Adjust the base URL according to your server
+  baseURL: `http://localhost:${REST_API_PORT}`, // Adjust the base URL according to your server
 });
 
 // Optional: Add request interceptors for global configurations
