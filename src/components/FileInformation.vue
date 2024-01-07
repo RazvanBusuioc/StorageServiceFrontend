@@ -29,7 +29,7 @@
     methods: {
       async submitForm() {
         try {
-          const response = await getRequest("/api/match-filename", {fileName: this.textInput, isCloud: this.isCloud});
+          const response = await getRequest("/api/match-filename", {regexp: this.textInput, isCloud: this.isCloud});
 
           // TODO_BUSU: show a notification for succes/fail
           console.log('Server Response:', response.data);
